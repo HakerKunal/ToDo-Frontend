@@ -1,0 +1,29 @@
+.outerdiv {
+    border: 1px solid black;
+    height: 500px;
+    margin-left: 280px;
+    margin-top: 50px;
+    width: 60vw;
+    border-radius: 10px;
+
+}
+
+.heading1 {
+    font-size: larger;
+    text-align: center;
+    margin-left: 40%;
+    text-decoration: underline;
+}
+
+.column {
+    background-origin: padding-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.priority-box {
+
+    margin-left: 30px;
+}

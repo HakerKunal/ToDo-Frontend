@@ -1,0 +1,24 @@
+.outer-box {
+    border: 1px solid black;
+}
+
+form {
+    background-color: #c6c8df;
+    width: 100vw;
+    height: 44px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.search-text {
+    margin-left: 500px;
+    width: 400px;
+    height: 40px;
+}
+
+button {
+    height: 40px
+}

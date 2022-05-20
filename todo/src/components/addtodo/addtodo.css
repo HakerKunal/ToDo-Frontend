@@ -1,0 +1,31 @@
+.outerbox {
+    border: 1px solid black;
+    height: 100px;
+    width: 800px;
+    position: relative;
+    left: 330px;
+    top: 20px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+}
+
+.taskname1,
+.priorit,
+.status {
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+label {
+    padding-right: 10px;
+}
+
+.addButton {
+    margin-left: 50px;
+    width: 100px;
+
+}
