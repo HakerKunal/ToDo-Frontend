@@ -1,0 +1,31 @@
+.card {
+    background-color: aliceblue;
+    margin: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+
+.taskname {
+
+    width: 180px;
+
+    white-space: initial;
+    word-wrap: break-word
+}
+
+.actionButton {
+
+    width: 80px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+
+}
