@@ -27,5 +27,22 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
+    position: relative;
+    right: 25px;
 
+}
+
+.priority1,
+.lastmodified,
+.status1 {
+    width: 100px;
+    text-align: center;
+    position: relative;
+    right: 40px
+}
+
+.lastmodified {
+    width: 150px;
+    position: relative;
+    right: 35px
 }

@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { addTask } from "../../service/api";
 import '../addtodo/addtodo.css'
 
-function AddToDo() {
-    const [task, setTask] = useState({ taskname: "", priority: "low", status: "not started", lastmodified: "" })
+function AddToDo(props) {
+    const [task, setTask] = useState({ taskname: "", priority: "low", status: "not started", last_modified: "" })
+
+    const addTaskdetails = async () => {
+        await addTask(task)
+    }
 
     const handleTaskName = (event) => {
         setTask({ ...task, taskname: event.target.value })
@@ -15,25 +20,31 @@ function AddToDo() {
     const handleStatus = (event) => {
         setTask({ ...task, status: event.target.value })
     }
-    const setDateTime = () => {
+    const setDateTime = async () => {
         var today = new Date();
         var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         var dateTime = date + ' ' + time;
-        console.log(dateTime)
-        setTask({ ...task, lastmodified: dateTime })
+
+        setTask({ ...task, last_modified: dateTime })
+
 
     }
+    useEffect(() => { setDateTime() }, [])
+
     const handleSubmit = () => {
         if (task.taskname != "") {
             setDateTime()
-            console.log(task)
+            props.handleLoading()
+            addTaskdetails()
         }
         else {
             alert("Task name should not be empty")
         }
 
     }
+
+
 
 
 

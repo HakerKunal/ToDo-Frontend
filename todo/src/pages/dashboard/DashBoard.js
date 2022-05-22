@@ -1,17 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import SearchBar from "../../components/searchbar/SearchBar";
 import AddToDo from "../../components/addtodo/AddToDo";
 import TaskList from "../../components/tasklist/TaskList";
 
-function DashBoard() {
+function DashBoard(props) {
+    const [loading, setLoading] = useState(false)
+    const handleLoading = () => {
+        setLoading(!loading)
+
+    }
+
+
 
     return (
         <div className="dashboard">
             <SearchBar />
 
-            <AddToDo />
+            <AddToDo handleLoading={handleLoading} />
 
-            <TaskList />
+            <TaskList loading={loading} />
 
         </div>
     )
