@@ -38,6 +38,7 @@ function AddToDo(props) {
             await addTaskdetails()
             props.handleLoading()
 
+
         }
         else {
             alert("Task name should not be empty")

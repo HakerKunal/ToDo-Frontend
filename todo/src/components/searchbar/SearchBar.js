@@ -48,7 +48,7 @@ function SearchBar(props) {
             <form className='searchinput' role="search">
                 <input className='search-text' type="search" id="query" name="q"
                     placeholder="Search..."
-                    aria-label="Search through site content" autocomplete="off" onChange={event => { setQuery(event.target.value) }} onClick={toogleClick} />
+                    aria-label="Search through site content" autoComplete="off" onChange={event => { setQuery(event.target.value) }} onClick={toogleClick} />
                 {clicked ? <div className='dataResult' >
                     {mapedData}</div> : <div />}
                 <button onClick={(e) => { e.preventDefault();; setClicked(false) }}>Close</button>
