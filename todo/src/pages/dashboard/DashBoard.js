@@ -14,7 +14,7 @@ function DashBoard(props) {
 
     return (
         <div className="dashboard">
-            <SearchBar />
+            <SearchBar handleLoading={handleLoading} />
 
             <AddToDo handleLoading={handleLoading} />
 

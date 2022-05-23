@@ -74,16 +74,15 @@ function Task(props) {
 
 
     return (
-        <div className="card">
-            <div className="taskname">
+        <div className="card" >
+            <div className="taskname"
+                onClick={handleOpen}>
                 {props.item.taskname}
             </div>
-            <div className="priority1">{props.item.priority}</div>
-            <div className="status1">{props.item.status}</div>
-            <div className="lastmodified">{props.item.last_modified}</div>
+
             <div className="actionButton">
-                <IconButton onClick={handleDelete}><DeleteIcon></DeleteIcon></IconButton>
-                <IconButton onClick={handleOpen}><EditIcon /></IconButton>
+                <IconButton onClick={handleDelete} className="deleteButton" ><DeleteIcon></DeleteIcon></IconButton>
+
             </div>
 
 

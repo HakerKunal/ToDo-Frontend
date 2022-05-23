@@ -2,59 +2,59 @@
   "tasks": [
     {
       "id": 1,
-      "taskname": "cooking",
-      "priority": "low",
-      "status": "not started",
-      "last_modified": "12-05-2022 11:54:99"
+      "taskname": "marketing",
+      "priority": "Normal",
+      "status": "Done",
+      "last_modified": "2022-5-23 10:42:15"
     },
     {
       "id": 2,
-      "taskname": "cooking 2",
-      "priority": "high",
-      "status": "not started",
-      "last_modified": "10-05-2022 11:54:99"
-    },
-    {
-      "id": 3,
-      "taskname": "cooking 3",
-      "priority": "medium",
-      "status": "not started",
-      "last_modified": "11-05-2022 11:54:99"
-    },
-    {
-      "taskname": "wadwda",
-      "priority": "low",
-      "status": "not started",
-      "last_modified": "2022-5-22 12:27:10",
-      "id": 4
-    },
-    {
-      "taskname": "hello",
-      "priority": "medium",
+      "taskname": "cotton ",
+      "priority": "Low",
       "status": "Done",
-      "last_modified": "2022-5-22 12:27:28",
-      "id": 5
+      "last_modified": "2022-5-23 10:29:39"
     },
     {
-      "taskname": "bathing",
-      "priority": "high",
-      "status": "not started",
-      "last_modified": "2022-5-22 13:45:55",
-      "id": 6
-    },
-    {
-      "taskname": "dancing",
-      "priority": "medium",
+      "id": 4,
+      "taskname": "washing ",
+      "priority": "Normal",
       "status": "In-Progress",
-      "last_modified": "2022-5-22 13:46:11",
-      "id": 7
+      "last_modified": "2022-5-23 11:1:41"
     },
     {
-      "taskname": "PPT making",
-      "priority": "high",
+      "id": 6,
+      "taskname": "Bathing",
+      "priority": "Low",
+      "status": "Not-Started",
+      "last_modified": "2022-5-23 0:13:1"
+    },
+    {
+      "id": 10,
+      "taskname": "panipuri",
+      "priority": "High",
       "status": "Done",
-      "last_modified": "2022-5-22 19:18:20",
-      "id": 8
+      "last_modified": "2022-5-23 0:6:1"
+    },
+    {
+      "id": 13,
+      "taskname": "party",
+      "priority": "High",
+      "status": "Not-Started",
+      "last_modified": "2022-5-23 0:11:5"
+    },
+    {
+      "taskname": "React work",
+      "priority": "High",
+      "status": "Done",
+      "last_modified": "2022-5-23 0:4:49",
+      "id": 14
+    },
+    {
+      "taskname": "horse riding",
+      "priority": "Low",
+      "status": "In-Progress",
+      "last_modified": "2022-5-23 0:11:46",
+      "id": 15
     }
   ]
 }
