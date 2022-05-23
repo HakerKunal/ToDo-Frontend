@@ -5,11 +5,15 @@ import Task from "../task/Task";
 function TaskList(props) {
 
     const [tasks, setTasks] = useState({ data: [], loaded: false })
+    const [isUpdated, setIsUpdate] = useState(false)
+    const handleUpdated = () => {
+        setIsUpdate(!isUpdated)
+    }
     const getData = () => {
         fetch("http://localhost:3004/tasks")
             .then((res) => res.json())
             .then((res) => {
-                console.log(res)
+
                 setTasks({ ...tasks, data: res, loaded: true })
 
 
@@ -19,14 +23,16 @@ function TaskList(props) {
         getData()
 
 
-    }, [props.loading])
+
+
+    }, [props.loading, isUpdated])
 
 
 
 
 
 
-    const list = tasks.data.map((item) => <div className="task-item" key={item.taskname.toString()}><Task item={item} /></div>)
+    const list = tasks.data.map((item) => <div className="task-item" key={item.taskname.toString()}><Task item={item} handleUpdated={handleUpdated} /></div>)
     return (
         <div className="outerdiv">
             <label className="heading1"> Our TO DO list</label>

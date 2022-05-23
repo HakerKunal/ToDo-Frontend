@@ -3,7 +3,7 @@ import { addTask } from "../../service/api";
 import '../addtodo/addtodo.css'
 
 function AddToDo(props) {
-    const [task, setTask] = useState({ taskname: "", priority: "low", status: "not started", last_modified: "" })
+    const [task, setTask] = useState({ taskname: "", priority: "Low", status: "Not-started", last_modified: "" })
 
     const addTaskdetails = async () => {
         await addTask(task)
@@ -32,11 +32,12 @@ function AddToDo(props) {
     }
     useEffect(() => { setDateTime() }, [])
 
-    const handleSubmit = () => {
+    const handleSubmit = async () => {
         if (task.taskname != "") {
             setDateTime()
+            await addTaskdetails()
             props.handleLoading()
-            addTaskdetails()
+
         }
         else {
             alert("Task name should not be empty")
@@ -51,15 +52,15 @@ function AddToDo(props) {
     return (
         <div className="outerbox">
             <div className="taskname1">
-                <label>taskname</label>
+                <label>Task Name</label>
                 <input type='text' value={task.taskname} onChange={handleTaskName}></input>
             </div>
             <div className="priorit">
-                <label>priority</label>
+                <label>Priority</label>
                 <select name="priority" onChange={handlePriority}>
-                    <option value="low">low</option>
-                    <option value="medium">medium</option>
-                    <option value="high">high</option>
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
 
 
                 </select>
@@ -68,7 +69,7 @@ function AddToDo(props) {
             <div className="status">
                 <label>Status</label>
                 <select name="status" onChange={handleStatus}>
-                    <option value="not started">Not Started</option>
+                    <option value="Not-Started">Not-Started</option>
                     <option value="In-Progress">In-Progress</option>
                     <option value="Done">Done</option>
                 </select>
