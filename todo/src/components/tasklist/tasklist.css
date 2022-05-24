@@ -34,3 +34,30 @@
     position: relative;
     right: 30px;
 }
+.outer-box {
+    
+    min-height: 100vh
+    
+}
+
+.searchinput {
+    box-shadow: rgba(42, 38, 38, 0.35) 0px 5px 15px;
+    background-color: #c6c8df;
+    width: 100vw;
+    height: 44px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+}
+.search-text {
+    margin-left: 500px;
+    width: 400px;
+    height: 40px;
+
+}
+button {
+    height: 40px
+}
