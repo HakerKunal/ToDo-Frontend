@@ -2,7 +2,7 @@
 
     height: auto;
     margin-left: 280px;
-    margin-top: 50px;
+    margin-top: 80px;
     width: 60vw;
     border-radius: 10px;
     box-shadow: 0px 3px 22px -11px rgb(14, 96, 2);
@@ -10,6 +10,7 @@
 }
 
 .heading1 {
+   
     font-size: larger;
     text-align: center;
     margin-left: 40%;
@@ -17,6 +18,8 @@
 }
 
 .column {
+    position: relative;
+    top: 5px;
     background-origin: padding-box;
     display: flex;
     flex-direction: row;
@@ -33,6 +36,17 @@
 
     position: relative;
     right: 30px;
+    height: 20px;
+    align-items: center;
+    text-align: center;
+
+}
+.taskname2:hover {
+    border-radius: 20px;
+    
+    background-color:#c6c8df;
+    width: 100px;
+    text-align: center;
 }
 .outer-box {
     
@@ -60,4 +74,48 @@
 }
 button {
     height: 40px
+}
+
+
+
+.button-37 {
+  background-color: #13aa52;
+  border: 1px solid #13aa52;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, .1) 0 2px 4px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: "Akzidenz Grotesk BQ Medium", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  outline: 0;
+  padding: 10px 25px;
+  text-align: center;
+  transform: translateY(0);
+  transition: transform 150ms, box-shadow 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  position: relative;
+  right:300px;
+    top:20px;
+    float:right
+}
+
+.button-37:hover {
+  box-shadow: rgba(0, 0, 0, .15) 0 3px 9px 0;
+  transform: translateY(-2px);
+}
+
+
+
+.labelitem:hover{
+    border-radius: 20px;
+    position: relative;
+    
+    background-color:#c6c8df;
+    width: 100px;
+    text-align: center;
 }
