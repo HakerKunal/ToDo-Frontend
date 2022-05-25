@@ -3,21 +3,11 @@ import "../task/task.css";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import { IconButton } from "@mui/material";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-
-import Modal from "@mui/material/Modal";
-import Select, { SelectChangeEvent } from "@mui/material/Select";
-import MenuItem from "@mui/material/MenuItem";
 import { deleteTask, updateTask } from "../../service/api";
 
-import AddToDo from "../addtodo/AddToDo";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Task(props) {
-  const [isUpdated, setIsUpdate] = useState(false);
-  const [open, setOpen] = React.useState(false);
-
   const [taskObj, setTaskObj] = React.useState({
     id: props.item.id,
     taskname: props.item.taskname,
