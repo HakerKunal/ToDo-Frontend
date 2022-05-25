@@ -1,14 +1,9 @@
 import "./App.css";
-import Sort from "./components/Sort";
+
 import DashBoard from "./pages/dashboard/DashBoard";
 
 function App() {
-  return (
-    <div className="App">
-      {/* <DashBoard /> */}
-      <Sort />
-    </div>
-  );
+  return <div className="App">{/* <DashBoard /> */}</div>;
 }
 
 export default App;
