@@ -3,8 +3,8 @@
     {
       "taskname": "washing  ",
       "priority": "Medium",
-      "status": "Done",
-      "last_modified": "2022-5-25 17:26:57",
+      "status": "In-Progress",
+      "last_modified": "2022-5-27 12:0:52",
       "id": 4
     },
     {
@@ -59,8 +59,8 @@
     {
       "taskname": "apple eating",
       "priority": "Medium",
-      "status": "In-Progress",
-      "last_modified": "2022-5-24 17:47:51",
+      "status": "Done",
+      "last_modified": "2022-5-27 12:13:23",
       "id": 21
     },
     {
@@ -71,25 +71,11 @@
       "id": 22
     },
     {
-      "taskname": "dwadwa",
-      "priority": "Low",
-      "status": "Not-Started",
-      "last_modified": "2022-5-25 10:36:46",
-      "id": 23
-    },
-    {
       "taskname": "New task",
       "priority": "Medium",
       "status": "In-Progress",
       "last_modified": "2022-5-25 11:5:37",
       "id": 24
-    },
-    {
-      "taskname": "jwdajwad",
-      "priority": "Low",
-      "status": "Not-Started",
-      "last_modified": "2022-5-25 11:5:49",
-      "id": 25
     },
     {
       "taskname": "bank work",
@@ -104,6 +90,13 @@
       "status": "In-Progress",
       "last_modified": "2022-5-25 17:27:20",
       "id": 27
+    },
+    {
+      "taskname": "power",
+      "priority": "Medium",
+      "status": "Done",
+      "last_modified": "2022-5-27 11:51:58",
+      "id": 28
     }
   ]
 }

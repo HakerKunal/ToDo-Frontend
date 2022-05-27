@@ -78,7 +78,6 @@ function TaskList(props) {
           }
         });
     } else if (sortby === "priority") {
-      console.log("under priority");
       tasks.data.forEach((v) => {
         if (v.priority === "High") {
           v.priority = 3;
@@ -109,15 +108,12 @@ function TaskList(props) {
     setSOrtBy("status");
   };
   const changeSortByToPriority = () => {
-    console.log(sortby);
     setSOrtBy("priority");
   };
   const changeSortByToTaskname = () => {
-    console.log(sortby);
     setSOrtBy("taskname");
   };
   const changeSortByToDate = () => {
-    console.log(sortby);
     setSOrtBy("date");
   };
   const handlePageChange = (event, value) => {
