@@ -1,16 +1,13 @@
 .outerdiv {
-height: 700px;
-  
+    height: 700px;
+    border: solid 3px #6e7491;
     margin-left: 280px;
     margin-top: 80px;
     width: 60vw;
     border-radius: 10px;
     border-color: black;
-    box-shadow: 0px 3px 22px -11px rgb(14, 96, 2);
-    border-top-left-radius: 37px 140px;
-    border-top-right-radius: 23px 130px;
-    border-bottom-left-radius: 110px 19px;
-    border-bottom-right-radius: 120px 24px;
+    box-shadow: 3px 15px 8px -10px rgba(0, 0, 0, 0.3);
+
 
 }
 

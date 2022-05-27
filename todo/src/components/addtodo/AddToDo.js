@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { addTask, updateTask } from "../../service/api";
 import "../addtodo/addtodo.css";
-import Button from "@mui/material/Button";
-import { Link } from "react-router-dom";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import TextField from "@mui/material/TextField";
 import { useLocation, useNavigate } from "react-router-dom";
+import Select, { SelectChangeEvent } from "@mui/material/Select";
+import Button from "@mui/material/Button";
+
+import { Link } from "react-router-dom";
 
 function AddToDo(props) {
   const location = useLocation();
-  const [updated, setUpdated] = useState(false);
   const [task, setTask] = useState({
     taskname: "",
     priority: "Low",
@@ -15,7 +19,7 @@ function AddToDo(props) {
     last_modified: "",
     id: "",
   });
-
+  const [errorText, setErrorText] = React.useState();
   const addTaskdetails = async () => {
     await addTask(task);
   };
@@ -48,30 +52,32 @@ function AddToDo(props) {
   }, [task.priority, task.status, task.taskname]);
   const navigate = useNavigate();
   const handleSubmit = async () => {
-    if (location.state == null) {
-      if (task.taskname != "") {
+    if (location.state === null) {
+      if (task.taskname !== "") {
         await setDateTime();
         await addTaskdetails();
+        setErrorText("");
         navigate("/dashboard", { state: { updated: true } });
       } else {
-        alert("Task name should not be empty");
+        setErrorText("task name should not be empty");
       }
-    } else if (location.state != null) {
-      if (task.taskname == "") {
-        alert("Task Name should not be Nil");
+    } else if (location.state !== null) {
+      if (task.taskname === "") {
+        setErrorText("task name should not be empty");
       } else {
         await updateTask(task.id, task)
           .then((res) => console.log(res))
           .catch((err) => console.log(err));
+        setErrorText("");
         navigate("/dashboard", { state: { updated: true } });
       }
     }
   };
 
   function updateTask1() {
-    if (location.state == null) {
+    if (location.state === null) {
       console.log("no change");
-    } else if (location.state != null) {
+    } else if (location.state !== null) {
       setTask({
         ...task,
         id: location.state.id,
@@ -88,51 +94,62 @@ function AddToDo(props) {
 
   return (
     <div className="outerbox">
-      <label className="heading">ADD TO DO...</label>
-      <div className="innerbox">
-        <div className="taskname1">
-          <label className="heading-1">Task Name</label>
-          <input
-            type="text"
-            value={task.taskname}
-            onChange={handleTaskName}
-          ></input>
-        </div>
-        <div className="priorit">
-          <label className="heading-1">Priority</label>
-          <select
-            name="priority"
-            onChange={handlePriority}
-            value={task.priority}
-          >
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-          </select>
-        </div>
-        <div className="status">
-          <label className="heading-1">Status</label>
-          <select name="status" onChange={handleStatus} value={task.status}>
-            <option value="Not-Started">Not-Started</option>
-            <option value="In-Progress">In-Progress</option>
-            <option value="Done">Done</option>
-          </select>
-        </div>
-        <div className="buttons">
-          <Button
-            variant="contained"
-            className="addButton"
-            onClick={handleSubmit}
-          >
-            Save
+      <label className="heading">ADD TO DO</label>
+      <div className="task-name-box">
+        <TextField
+          className="task-name"
+          label="Task Name"
+          variant="outlined"
+          value={task.taskname}
+          onChange={handleTaskName}
+          size="small"
+          required="true"
+          helperText={errorText}
+          error={errorText}
+        />
+      </div>
+      <div className="priority-box">
+        <InputLabel id="demo-simple-select-helper-label">Priority</InputLabel>
+        <Select
+          className="priority-select"
+          labelId="demo-simple-select-helper-label"
+          id="demo-simple-select-helper"
+          value={task.priority}
+          label="Priority"
+          onChange={handlePriority}
+        >
+          <MenuItem value="Low">Low</MenuItem>
+          <MenuItem value="Medium">Medium</MenuItem>
+          <MenuItem value="High">High</MenuItem>
+        </Select>
+      </div>
+      <div className="status-box">
+        <InputLabel id="demo-simple-select-helper-label">Status</InputLabel>
+        <Select
+          className="status-select"
+          onChange={handleStatus}
+          value={task.status}
+          label="Status"
+        >
+          <MenuItem value="Not-Started">Not-Started</MenuItem>
+          <MenuItem value="In-Progress">In-Progress</MenuItem>
+          <MenuItem value="Done">Done</MenuItem>
+        </Select>
+      </div>
+      <div className="buttons">
+        <Button
+          variant="contained"
+          className="addButton"
+          onClick={handleSubmit}
+        >
+          Save
+        </Button>
+        <Link to="/dashboard">
+          {" "}
+          <Button variant="contained" className="addButton" color="secondary">
+            Close
           </Button>
-          <Link to="/dashboard">
-            {" "}
-            <Button variant="contained" className="addButton" color="secondary">
-              Close
-            </Button>
-          </Link>
-        </div>
+        </Link>
       </div>
     </div>
   );
